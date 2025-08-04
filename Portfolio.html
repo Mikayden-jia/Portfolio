@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mikhaela Louise O. Bernardo — Multimedia / Graphic Designer Portfolio</title>
+  <meta name="description" content="Portfolio of Mikhaela Louise O. Bernardo, multimedia assistant and graphic designer. Showcasing artwork, projects, skills, and contact information.">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #fadadd;
+      --gray: #b0b0b0;
+      --mint: #008080;
+      --green: #66bb6a;
+      --darkgray: #333333;
+      --white: #ffffff;
+      --beige: #F5F5DC;
+      --accent: #ff6f91;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--darkgray);
+      background: linear-gradient(135deg,#ee9ca7 0%,#ffdde1 100%);
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; margin:0; }
+    h1 { letter-spacing: 1px; font-weight: 700; font-size: 3rem; }
+    h2, h3 { font-weight: 600; color: #444; }
+    p { line-height: 1.6; margin: 0 0 1em; }
+
+    header {
+      background-color: var(--beige);
+      padding: 10px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand .name {
+      font-weight:700;
+      font-size:1.1rem;
+    }
+    .brand .role {
+      font-size:0.75rem;
+      color: #666;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: var(--darkgray);
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color .25s ease, color .25s ease;
+    }
+    nav ul li a:hover {
+      background-color: var(--mint);
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    .hero-section {
+      width: 100%;
+      min-height: 75vh;
+      background: url('cover-photo.jpg') center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: var(--white);
+      text-align: center;
+      padding: 0 20px;
+      overflow: hidden;
+    }
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+      backdrop-filter: blur(2px);
+    }
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 900px;
+      padding: 30px 25px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 30px 60px -10px rgba(0,0,0,0.5);
+    }
+    .hero-copy {
+      flex: 1 1 250px;
+      min-width: 220px;
+      text-align: center;
+    }
+    @media (min-width: 900px) {
+      .hero-copy { text-align: left; }
+    }
+    .photo-circle {
+      flex: 0 0 120px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--mint), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 15px 35px -5px rgba(0,0,0,0.4);
+    }
+    .photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-circle .initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-block;
+      background-color: var(--mint);
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      overflow: hidden;
+      transition: transform .2s ease;
+    }
+    .btn:hover { transform: scale(1.03); }
+    .btn::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+      transform: translateX(-100%) skewX(-15deg);
+      transition: transform .8s ease;
+    }
+    .btn:hover::before {
+      transform: translateX(100%) skewX(-15deg);
+    }
+
+    .main-content {
+      padding: 50px 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: var(--white);
+      border-radius: 12px;
+      margin-top: -60px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    section {
+      padding: 30px 0;
+      border-bottom: 1px solid var(--gray);
+    }
+    section:last-of-type { border-bottom: none; }
+    .flex { display: flex; gap: 25px; flex-wrap: wrap; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--gray);
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1 1 300px;
+      position: relative;
+    }
+    .skill-badge {
+      display: inline-block;
+      background: var(--mint);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin: 4px 6px 4px 0;
+    }
+
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+    }
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .project-info { flex: 1 1 400px; }
+    .project-info h3 { margin-top: 0; }
+    .small-thumb {
+      flex: 0 0 auto;
+      margin-right: 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .small-thumb img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .gallery-grid {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      margin-top: 15px;
+    }
+    .gallery-item {
+      position: relative;
+      background: #f7f7f7;
+      border-radius: 8px;
+      overflow: hidden;
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+    }
+    .gallery-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 6px;
+    }
+    .gallery-item .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.55);
+      color: white;
+      padding: 8px 10px;
+      font-size: 0.65rem;
+      line-height: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      backdrop-filter: blur(4px);
+    }
+
+    .resume-box {
+      background: linear-gradient(135deg,var(--pink), var(--beige));
+      padding: 25px;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 25px;
+      margin-top: 10px;
+    }
+    .resume-box div { flex: 1 1 300px; }
+    .download-resume {
+      background-color: var(--accent);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: var(--darkgray);
+      color: var(--white);
+      text-align: center;
+      padding: 35px 20px;
+      width: 100%;
+      margin-top: 40px;
+    }
+    .contact-details p { margin: 6px 0; }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .socials a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 6px;
+      transition: background .2s ease;
+    }
+    .socials a:hover { background: rgba(255,255,255,0.1); }
+    .back-to-top {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background-color: var(--gray);
+      color: var(--white);
+      padding: 12px;
+      border-radius: 50%;
+      text-decoration: none;
+      display: none;
+      z-index: 999;
+      font-size: 18px;
+    }
+    .back-to-top:hover { background-color: var(--darkgray); }
+
+    @media (max-width: 900px) {
+      .hero-text h1 { font-size: 2.3rem; }
+      .project { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="name">Mikhaela Louise O. Bernardo</div>
+      <div class="role">Multimedia / Graphic Designer</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero-section">
+    <div class="hero-text">
+      <div class="photo-circle" aria-label="Profile photo">
+        <img src="profile.jpg" alt="Portrait of Mikhaela Louise Bernardo">
+        <!-- <div class="initials">MB</div> -->
+      </div>
+      <div class="hero-copy">
+        <h1 data-name="Mikhaela Louise O. Bernardo">Hi, I’m Mikhaela Louise Bernardo</h1>
+        <p>Multimedia assistant & graphic designer passionate about visual storytelling, branding, and user-centered creative solutions. Browse some of my work below and let’s create something memorable.</p>
+        <a class="btn" href="#projects">View Featured Work</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <!-- About -->
+    <section id="about">
+      <div class="card">
+        <h2>About Me</h2>
+        <p>I specialize in blending art and functionality to produce striking visuals for digital and print platforms. With experience in multimedia campaigns, brand identity, and interactive content, I bring ideas to life through thoughtful design and efficient execution. I’m seeking a role as a <strong>Multimedia Assistant</strong> or <strong>Graphic Designer</strong> where I can contribute creatively while growing with a collaborative team.</p>
+        <p>Location: Quezon City, Philippines | Available for remote / hybrid opportunities.</p>
+        <p>Tools I work with: Visual Studio Code, Figma, Canva, IbisPaint, Wix, basic HTML/CSS, and content management workflows.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills & Expertise</h2>
+      <div class="flex">
+        <div class="card" style="flex:1 1 250px;">
+          <h3>Design</h3>
+          <div>
+            <span class="skill-badge">Branding</span>
+            <span class="skill-badge">Layout</span>
+            <span class="skill-badge">Illustration</span>
+          </div>
+        </div>
+        <div class="card" style="flex:1 1 250px;">
+          <h3>Multimedia</h3>
+          <div>
+            <span class="skill-badge">Video Editing</span>
+            <span class="skill-badge">Motion Graphics</span>
+            <span class="skill-badge">Social Content</span>
+            <span class="skill-badge">Web Design</span>
+            <span class="skill-badge">UI / UX Design</span>
+          </div>
+        </div>
+        <div class="card" style="flex:1 1 250px;">
+          <h3>Tech & Workflow</h3>
+          <div>
+            <span class="skill-badge">Figma</span>
+            <span class="skill-badge">Canva</span>
+            <span class="skill-badge">Capcut</span>
+            <span class="skill-badge">HTML/CSS</span>
+            <span class="skill-badge">Github</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects">
+      <h2>Featured Projects</h2>
+
+      <div class="project">
+        <div class="small-thumb">
+          <img src="racoon dash.png" alt="Raccoon Dash logo / character art">
+        </div>
+        <div class="project-info">
+          <h3>Game Development</h3>
+          <p><strong>Role:</strong> Lead Line Art and Graphic Designer</p>
+          <p><strong>Description:</strong> Crafted the visual identity for "Raccoon Dash," including detailed character line art, logo treatment, and UI accents that balance playful charm with clarity. Developed asset systems ensuring consistency across various screen ratios and states (idle, action, reward feedback).</p>
+          <p><strong>Impact:</strong> Enhanced player engagement through expressive character visuals and intuitive graphical cues, contributing to a more cohesive and memorable game experience.</p>
+          <p><strong>Tools:</strong> Unity and Canva</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div style="flex:1 1 320px; min-width: 280px;">
+          <img src="cafe web layout.png" alt="Cafe promotional website UI mockup">
+        </div>
+        <div class="project-info">
+          <h3>Cafe Promo Website</h3>
+          <p><strong>Role:</strong> UI/UX Creator & Visual Designer</p>
+          <p><strong>Project Goal:</strong> Design an engaging microsite to promote a local coffee shop’s seasonal menu and drive foot traffic through clear calls-to-action and brand warmth.</p>
+          <p><strong>Challenges:</strong> Balancing a cozy, handcrafted aesthetic with mobile-first usability; keeping load time light while retaining rich visuals.</p>
+          <p><strong>Impact:</strong> Helped the client present a polished online presence that increased social shares of promotions and improved customer awareness of seasonal offerings.</p>
+          <p><strong>Tools:</strong> Figma, basic HTML/CSS prototyping (concept stage).</p>
+        </div>
+      </div>
+
+      <div class="project">
+        <div style="flex:1 1 320px; min-width: 280px;">
+          <img src="mibf.png" alt="MIBF event ticket design">
+        </div>
+        <div class="project-info">
+          <h3>MIBF Ticket</h3>
+          <p><strong>Role:</strong> Lead Multimedia Designer</p>
+          <p><strong>Project Goal:</strong> Design an entrance ticket that doubles as a branded keepsake for attendees of a combined coffee shop and bookstore event—balancing functionality with aesthetic appeal.</p>
+          <p><strong>Outcome:</strong> Delivered a ticket design that enhanced the event’s perceived value, encouraged collectors’ sentiment, and provided a seamless entry experience for customers.</p>
+          <p><strong>Tools:</strong> Canva </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="line art.jpg" alt="Line Art Study: Ethereal Forms">
+        <div class="caption">
+          <strong>“Ethereal Forms” – Line Art Study</strong>
+          <span>Exploration of fluid linework and expression; focuses on dynamic poses and emotional subtleties in character sketches.</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="hihi.png" alt="Illustration: Whimsical Character">
+        <div class="caption">
+          <strong>“Whimsical Companion”</strong>
+          <span>Character illustration combining playful proportions with a soft color palette to evoke friendliness and approachability.</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="logo2.png" alt="Logo Design Sample">
+        <div class="caption">
+          <strong>Brand Mark & Identity</strong>
+          <span>Logo exploration for a boutique client; emphasis on typography harmony and scalable simplicity for both digital and print use.</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="UI help des.png" alt="UI/UX Layout Design">
+        <div class="caption">
+          <strong>UI/UX Layout Concept</strong>
+          <span>Wireframe-to-visual design demonstrating user flow clarity, hierarchy, and accessibility-conscious spacing.</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="2.png" alt="Multimedia Composition">
+        <div class="caption">
+          <strong>Mixed Media Composition</strong>
+          <span>Layered visual storytelling piece merging digital textures with illustrative elements to convey narrative depth.</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="1.png" alt="Experiment in Color & Form">
+        <div class="caption">
+          <strong>Color & Form Experiment</strong>
+          <span>Study in balancing bold hues with minimalist shapes—aimed at testing emotional resonance through abstract visuals.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resume / CV -->
+    <section id="resume">
+      <h2>Resume / CV</h2>
+      <div class="resume-box">
+        <div>
+          <h3>Get to Know My Experience</h3>
+          <p>Download a clean, tailored resume highlighting relevant multimedia and design roles, software proficiency, education, and project impact. Available as PDF or editable format.</p>
+          <a class="download-resume" href="Bernardo-Mikhaela Louise-Ong (1) (1).pdf" target="_blank" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="flex">
+        <div class="card" style="flex:1 1 280px;">
+          <h3>Let’s Collaborate</h3>
+          <p>If you're looking for a multimedia assistant or graphic designer who can deliver polished visuals with care, I'd love to chat.</p>
+          <div class="contact-details">
+            <p>Email: mikay.bernardo@gmail.com</p>
+            <p>Phone / Viber / WhatsApp: 09952492493</p>
+            <p>Location: Quezon City, Philippines</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <a href="#" class="back-to-top" id="backToTop">&#8679;</a>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Mikhaela Louise O. Bernardo. Designed. All rights reserved.</p>
+    <p>Available for freelance, part-time, or full-time multimedia/graphic design work.</p>
+  </footer>
+
+  <script>
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
